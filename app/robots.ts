@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:10000';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -7,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://wireframes.internet.dev/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
